@@ -5,3 +5,7 @@ git clone --branch mo-docker git@github.com:MushroomObserver/mushroom-observer.g
 
 cp mushroom-observer/config/gmaps_api_key.yml-template mushroom-observer/config/gmaps_api_key.yml
 cp mushroom-observer/db/docker/database.yml mushroom-observer/config/database.yml
+
+docker-compose build
+docker-compose up -d
+docker-compose run app bundle install
