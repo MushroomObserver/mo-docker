@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# The --branch arg should be removed once this gets merged to main
+git clone --branch mo-docker git@github.com:MushroomObserver/mushroom-observer.git
+
+cp mushroom-observer/config/gmaps_api_key.yml-template mushroom-observer/config/gmaps_api_key.yml
+cp mushroom-observer/db/docker/database.yml mushroom-observer/config/database.yml

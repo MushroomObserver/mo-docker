@@ -1,3 +1,6 @@
+# Ignore the MO source directory
+mushroom-observer
+
 # Ignore emacs ~ files
 *~
 
