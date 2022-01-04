@@ -1,3 +1,6 @@
+# Ignore emacs ~ files
+*~
+
 *.gem
 *.rbc
 /.config
