@@ -36,6 +36,7 @@ mysql -h 0.0.0.0 -u mo -pmo mo_development -e ''
 if [ ! $? -eq 0 ]; then
     mysql -h 0.0.0.0 -u root -proot < mushroom-observer/db/init-docker.sql
     mysql -h 0.0.0.0 -u root -proot mo_development < mushroom-observer/db/docker-dump.sql
+    docker-compose run app rails lang:update
     echo Created and populated mo_development database
 else
     docker-compose run app rails db:migrate
