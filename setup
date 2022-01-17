@@ -1,11 +1,43 @@
 #!/bin/bash
 
-# The --branch arg should be removed once this gets merged to main
-git clone --branch mo-docker git@github.com:MushroomObserver/mushroom-observer.git
+if [ ! -d mushroom-observer ]; then
+    # The --branch arg should be removed once this gets merged to main
+    git clone --branch mo-docker git@github.com:MushroomObserver/mushroom-observer.git
+    echo Cloned MushroomObserver/mushroom-observer
+else
+    echo mushroom-observer directory exists
+fi
 
-cp mushroom-observer/config/gmaps_api_key.yml-template mushroom-observer/config/gmaps_api_key.yml
-cp mushroom-observer/db/docker/database.yml mushroom-observer/config/database.yml
+cd mushroom-observer
+
+if [ ! -f config/database.yml ]; then
+    cp db/docker/database.yml config
+    echo Copied config/database.yml
+else
+    echo database.yml exists
+fi
+
+if [ ! -f config/gmaps_api_key.yml ]; then
+    cp config/gmaps_api_key.yml-template config/gmaps_api_key.yml
+    echo Copied config/gmaps_api_key.yml
+else
+    echo gmaps_api_key.yml exists
+fi
+
+cd ..
 
 docker-compose build
 docker-compose up -d
-docker-compose run app bundle install
+sleep 45 # Wait for MySQL init process
+
+# TODO: Get mysql client working in the container so we do have to have it
+# working in the host
+mysql -h 0.0.0.0 -u mo -pmo mo_development -e ''
+if [ ! $? -eq 0 ]; then
+    mysql -h 0.0.0.0 -u root -proot < mushroom-observer/db/init-docker.sql
+    docker-compose run app bin/init-docker-db
+    echo Created and populated mo_development database
+else
+    docker-compose run app rails db:migrate
+    echo Ran migrations on the mo_development database
+fi
