@@ -35,7 +35,7 @@ sleep 45 # Wait for MySQL init process
 mysql -h 0.0.0.0 -u mo -pmo mo_development -e ''
 if [ ! $? -eq 0 ]; then
     mysql -h 0.0.0.0 -u root -proot < mushroom-observer/db/init-docker.sql
-    docker-compose run app bin/init-docker-db
+    mysql -h 0.0.0.0 -u root -proot mo_development < mushroom-observer/db/docker-dump.sql
     echo Created and populated mo_development database
 else
     docker-compose run app rails db:migrate
