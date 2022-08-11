@@ -45,3 +45,14 @@ it should list both containers and indicate which ones have exited.
 You can see what happened with:
 
 docker logs <container-name>
+
+
+Testing
+
+Connect to the app container with:
+
+docker exec -it mo_app bash
+
+Then run:
+
+rails test
