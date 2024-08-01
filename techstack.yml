@@ -1,0 +1,91 @@
+repo_name: MushroomObserver/mo-docker
+report_id: 52ea673ff7dfac7aca3e8928430f77df
+version: 0.1
+repo_type: Public
+timestamp: '2024-08-01T19:48:12+00:00'
+requested_by: mo-nathan
+provider: github
+branch: main
+detected_tools_count: 7
+tools:
+- name: SQL
+  description: It is a domain-specific language used in programming
+  website_url: https://en.wikipedia.org/wiki/SQL
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker/blob/main/mysql/init/docker-1-init.sql
+  detection_source: mysql/init/docker-1-init.sql
+  last_updated_by: Nathan Wilson
+  last_updated_on: 2022-01-23 22:25:56.000000000 Z
+- name: Cloud DB for Mysql
+  description: Easily setup and manage the MySQL database service
+  website_url: https://www.ncloud.com/product/database/cloudDbMysql
+  open_source: false
+  hosted_saas: true
+  category: Data Stores
+  sub_category: SQL Database as a Service
+  image_url: https://img.stackshare.io/service/21275/default_078eb0ae2b56280a937ed073a3ba4332291f9ba8.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker/blob/main/mysql/Dockerfile
+  detection_source: mysql/Dockerfile
+  last_updated_by: Nathan Wilson
+  last_updated_on: 2022-01-04 13:17:15.000000000 Z
+- name: MySQL
+  description: The world's most popular open source database
+  website_url: http://www.mysql.com
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1025/logo-mysql-170x170.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Nathan Wilson
+  last_updated_on: 2022-01-04 13:17:15.000000000 Z
+- name: Docker
+  description: Enterprise Container Platform for High-Velocity Innovation.
+  website_url: https://www.docker.com/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Virtual Machine Platforms & Containers
+  image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker
+  detection_source: Repo Metadata
+- name: Google App Engine
+  description: Build web applications on the same scalable systems that power Google
+    applications
+  website_url: https://developers.google.com/appengine
+  open_source: false
+  hosted_saas: true
+  category: Application Hosting
+  sub_category: Platform as a Service
+  image_url: https://img.stackshare.io/service/139/s01TMTGn.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Nathan Wilson
+  last_updated_on: 2022-01-04 13:17:15.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/MushroomObserver/mo-docker
+  detection_source: Repo Metadata
